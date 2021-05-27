@@ -2,6 +2,8 @@
 
 Otáčecí počitadlo napsané v Reactu s pomocí `react-transition-group`.
 
+Demo: [https://react-flip-counter.netlify.app/](https://react-flip-counter.netlify.app/)
+
 ## Nastavení
 
 ### Komponenta Counter
