@@ -1,6 +1,6 @@
 # React flip counter
 
-Otáčecí počitadlo napsané v reactu s pomocí `react-transition-group`.
+Otáčecí počitadlo napsané v Reactu s pomocí `react-transition-group`.
 
 ## Nastavení
 
