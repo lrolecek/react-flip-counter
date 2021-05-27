@@ -72,16 +72,29 @@
 	transform: rotateX(180deg);
 }
 
+
+/* animace */
 .digit.enter :is(.old-top, .new-bottom) {
-	transition: transform var(--animation-speed) ease-in-out;
+	transition:
+		transform var(--animation-speed) ease-in-out,
+		color var(--animation-speed) ease-in-out;
+}
+
+:is(.digit.enter,	.digit.exit-done) .old-top {
+	color: white;
+}
+:is(.digit.enter, .digit.exit-done) .new-bottom {
+	color: black;
 }
 
 .digit.enter-active .old-top {
 	transform: rotateX(-180deg);
+	color: black;
 }
 
 .digit.enter-active .new-bottom {
 	transform: rotateX(0);
+	color: white;
 }
 
 .digit.exit-done :is(.old-top, .new-bottom) {
@@ -90,7 +103,7 @@
 
 
 
-
+/* cislo uvnitr horni/dolni poloviny */
 :is(
 	.new-top,
 	.old-top,
