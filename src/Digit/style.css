@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root {
+	--width: 66px;
+	--height: 100px;
+	--size: 82px;
+	--radius: 5px;
+	--animation-speed: 450ms;
+}
+
+.digit {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	font-size: var(--size);
+	line-height: 1;
+	width: var(--width);
+	height: var(--height);
+	position: relative;
+}
+
+.digit::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: calc(var(--height) / 2 - 1px);
+	width: 100%;
+	height: 2px;
+	background-color: #00000088;
+	z-index: 2;
+}
+
+:is(
+	.new-top,
+	.old-top,
+	.new-bottom,
+	.old-bottom
+) {
+	background-color: black;
+	color: white;
+	width: var(--width);
+	height: calc(var(--height) / 2);
+	position: absolute;
+	left: 0;
+	overflow: hidden;
+	backface-visibility: hidden;
+	transform: rotateX(0);
+}
+
+.new-top,
+.old-top {
+	top: 0;
+	transform-origin: 0 100%;
+	border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.new-bottom,
+.old-bottom {
+	top: calc(var(--height) / 2);
+	transform-origin: 0 0;
+	border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.old-top,
+.new-bottom {
+	z-index: 1;
+}
+
+.old-top {
+	transform: rotateX(0);
+}
+.new-bottom {
+	transform: rotateX(180deg);
+}
+
+.digit.enter :is(.old-top, .new-bottom) {
+	transition: transform var(--animation-speed) ease-in-out;
+}
+
+.digit.enter-active .old-top {
+	transform: rotateX(-180deg);
+}
+
+.digit.enter-active .new-bottom {
+	transform: rotateX(0);
+}
+
+.digit.exit-done :is(.old-top, .new-bottom) {
+	transition: none;
+}
+
+
+
+
+:is(
+	.new-top,
+	.old-top,
+	.new-bottom,
+	.old-bottom
+) span {
+	width: var(--width);
+	height: var(--height);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	left: 0;
+}
+
+:is(
+	.new-top,
+	.old-top,
+) span {
+	top: 0;
+}
+
+:is(
+	.new-bottom,
+	.old-bottom
+) span {
+	bottom: 0;
+}
+

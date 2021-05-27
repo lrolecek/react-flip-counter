@@ -1,0 +1,9 @@
+.counter {
+  display: flex;
+  perspective-origin: center center;
+  perspective: 1000px;
+}
+
+.counter > div:not(:last-child) {
+  margin-right: 4px;
+}
