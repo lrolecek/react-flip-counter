@@ -6,7 +6,9 @@ import Counter from './Counter';
 
 const App = () => (
   <>
-    <Counter />
+    <div className="page-center">
+      <Counter />
+    </div>
   </>
 );
 

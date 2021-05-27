@@ -1,5 +1,6 @@
 .counter {
   display: flex;
+  justify-content: center;
   perspective-origin: center center;
   perspective: 1000px;
 }
